@@ -93,27 +93,27 @@ ClientSpec::format(fmt::format_context& ctx) const {
 }
 
 
-PortSpec::PortSpec(Kind k, const std::string& p, bool e, int n, unsigned int t)
-  : kind(k), port(p), exactMatch(e), portNum(n), typeFlag(t)
+PortSpec::PortSpec(Kind k, const std::string& p, int n, unsigned int t)
+  : kind(k), port(p), portNum(n), typeFlag(t)
   { }
 
 PortSpec PortSpec::defaulted()
-  { return PortSpec(Defaulted, "", false, -1, 0); }
+  { return PortSpec(Defaulted, "", -1, 0); }
 
 PortSpec PortSpec::partial(const std::string& p)
-  { return PortSpec(Partial, p, false, -1, 0); }
+  { return PortSpec(Partial, p, -1, 0); }
 
 PortSpec PortSpec::exact(const std::string& p)
-  { return PortSpec(Exact, p, true, -1, 0); }
+  { return PortSpec(Exact, p, -1, 0); }
 
 PortSpec PortSpec::numeric(int n)
-  { return PortSpec(Numeric, "", false, n, 0); }
+  { return PortSpec(Numeric, "", n, 0); }
 
 PortSpec PortSpec::type(unsigned int t)
-  { return PortSpec(Type, "", false, -1, t); }
+  { return PortSpec(Type, "", -1, t); }
 
 PortSpec PortSpec::wildcard()
-  { return PortSpec(Wildcard, "", false, -1, 0); }
+  { return PortSpec(Wildcard, "", -1, 0); }
 
 bool PortSpec::isDefaulted() const
   { return kind == Defaulted; }

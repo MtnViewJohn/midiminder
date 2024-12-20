@@ -71,11 +71,10 @@ class PortSpec {
 
     Kind kind;
     std::string port;
-    bool exactMatch;
     int portNum;
     unsigned int typeFlag;
 
-    PortSpec(Kind, const std::string&, bool, int, unsigned int);
+    PortSpec(Kind, const std::string&, int, unsigned int);
 
     bool match(const Address&, bool primaryFlag) const;
 };
