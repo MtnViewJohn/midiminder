@@ -7,6 +7,7 @@
 #include <functional>
 #include <iostream>
 #include <string>
+#include <unicode/unistr.h>
 
 
 class Address {
@@ -43,6 +44,8 @@ class Address {
     std::string client;
     std::string port;
     std::string portLong;
+    icu::UnicodeString clientFolded;
+    icu::UnicodeString portFolded;
     bool primarySender;
     bool primaryDest;
 };

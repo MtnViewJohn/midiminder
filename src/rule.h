@@ -3,6 +3,7 @@
 #include <fmt/format.h>
 #include <iostream>
 #include <string>
+#include <unicode/unistr.h>
 #include <vector>
 
 #include "seq.h"
@@ -33,6 +34,7 @@ class ClientSpec {
 
     Kind kind;
     std::string client;
+    icu::UnicodeString clientFolded;
     int clientNum;
 
     ClientSpec(Kind, const std::string&, int);
@@ -71,6 +73,7 @@ class PortSpec {
 
     Kind kind;
     std::string port;
+    icu::UnicodeString portFolded;
     int portNum;
     unsigned int typeFlag;
 

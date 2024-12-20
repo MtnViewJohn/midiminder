@@ -5,10 +5,12 @@ Prerequisites:
   * make
   * libasound2-dev
   * libfmt-dev
-  * debhelper *(if building the .deb)*
+  * libicu-dev
+  * debhelper-compat=13 *(if building the .deb)*
 
   ```sh
-  sudo apt install g++ make libasound2-dev libfmt-dev
+  sudo apt install g++ make libasound2-dev libfmt-dev libicu-dev
+  sudo apt install debhelper-compat=13
   ```
 
 Clone this repo and run `make`:

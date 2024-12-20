@@ -44,6 +44,11 @@ Address::Address(
 
   if (trimmed.size() > 0)
     port = trimmed;
+
+  clientFolded = client.c_str();
+  clientFolded.foldCase();
+  portFolded = port.c_str();
+  portFolded.foldCase();
 }
 
 

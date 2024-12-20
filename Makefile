@@ -37,7 +37,8 @@ SRCS_USER += $(SRCS_COMMON)
 
 
 INCS := .
-LIBS := stdc++ asound fmt m
+LIBS := stdc++ asound fmt icuuc
+LIBS += m  # for older GCC systems
 
 OBJS_SERVER := $(SRCS_SERVER:%=$(BUILD_DIR)/%.o)
 OBJS_USER := $(SRCS_USER:%=$(BUILD_DIR)/%.o)

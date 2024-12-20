@@ -3,6 +3,7 @@ NOTES
 
 # TODO
 
+[x] case insensitive client and port name matches
 
 ## future
 
@@ -27,8 +28,6 @@ NOTES
 
 [-] optimize saving observedRules
     - no longer really needed, as never saved more than once per event
-
-[] ? case insensitive client and port name matches
 
 [] ? some way to be graceful about aseqdump - we shouldn't be saving
     those connections as observed rules

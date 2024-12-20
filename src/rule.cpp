@@ -53,7 +53,8 @@ _port_ ::=
 
 
 ClientSpec::ClientSpec(Kind k, const std::string& c, int i)
-  : kind(k), client(c), clientNum(i) { }
+  : kind(k), client(c), clientFolded(c.c_str()), clientNum(i)
+  { clientFolded.foldCase(); }
 
 ClientSpec ClientSpec::partial(const std::string& s)
   { return ClientSpec(Partial, s, 0); }
@@ -70,7 +71,7 @@ ClientSpec ClientSpec::wildcard()
 
 bool ClientSpec::match(const Address& a) const {
   switch (kind) {
-    case Partial:   return a.client.find(client) != std::string::npos;
+    case Partial:   return a.clientFolded.indexOf(clientFolded) != -1;
     case Exact:     return a.client == client;
     case Numeric:   return a.addr.client == clientNum;
     case Wildcard:  return true;
@@ -94,8 +95,8 @@ ClientSpec::format(fmt::format_context& ctx) const {
 
 
 PortSpec::PortSpec(Kind k, const std::string& p, int n, unsigned int t)
-  : kind(k), port(p), portNum(n), typeFlag(t)
-  { }
+  : kind(k), port(p), portFolded(p.c_str()), portNum(n), typeFlag(t)
+  { portFolded.foldCase(); }
 
 PortSpec PortSpec::defaulted()
   { return PortSpec(Defaulted, "", -1, 0); }
@@ -135,7 +136,7 @@ bool PortSpec::matchAsDest(const Address& a) const {
 bool PortSpec::match(const Address& a, bool primaryFlag) const {
   switch (kind) {
     case Defaulted:   return primaryFlag;
-    case Partial:     return a.port.find(port) != std::string::npos
+    case Partial:     return a.portFolded.indexOf(portFolded) != -1
                               || a.portLong == port; // just in case...
     case Exact:       return a.port == port || a.portLong == port;
     case Numeric:     return a.addr.port == portNum;
