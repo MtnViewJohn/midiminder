@@ -27,7 +27,7 @@ namespace User {
       else {
         std::cout << "Clients:\n";
         for (const auto& c : s.clients) {
-          fmt::print("    {:{cw}} [{:3}]",
+          fmt::print("    {0:{cw}} [{1:3}]",
             c.name, c.id,
             fmt::arg("cw", s.clientWidth));
           if (Args::listDetails)
@@ -47,7 +47,7 @@ namespace User {
       else {
         std::cout << "Ports:\n";
         for (const auto& p : s.ports) {
-          fmt::print("    {:{cw}} : {:{pw}} [{:3}:{}] {}\n",
+          fmt::print("    {0:{cw}} : {1:{pw}} [{2:3}:{3}] {4}\n",
             p.client, p.port, p.addr.client, p.addr.port,
             SeqSnapshot::addressDirStr(p),
             fmt::arg("cw", s.clientWidth), fmt::arg("pw", s.portWidth));

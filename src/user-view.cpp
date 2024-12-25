@@ -254,7 +254,7 @@ namespace {
       if (picking) std::cout << label << ')';
       else         std::cout << "  ";
 
-      fmt::print(" {:{cw}} : {:{pw}} [{:3}:{}] {}{}",
+      fmt::print(" {0:{cw}} : {1:{pw}} [{2:3}:{3}] {4}{5}",
         p.client, p.port, p.addr.client, p.addr.port,
         (isS1 | isS2) ? "    " : "",  // shifts over the arrow is selected
         (isS1 | isS2) ? SeqSnapshot::dirStr(isS1, isS2)
