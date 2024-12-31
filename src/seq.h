@@ -23,7 +23,7 @@ class Address {
 
     static const Address null;
 
-    operator bool() const { return valid; }
+    explicit operator bool() const { return valid; }
 
     bool canBeSender() const { return valid && caps & SND_SEQ_PORT_CAP_SUBS_READ; }
     bool canBeDest() const   { return valid && caps & SND_SEQ_PORT_CAP_SUBS_WRITE; }
@@ -55,7 +55,7 @@ class Seq {
 
     void begin(const char* clientName);
     void end();
-    operator bool() const { return seq; }
+    explicit operator bool() const { return seq; }
 
     std::string clientName(client_id_t);
     Address address(const snd_seq_addr_t&);
