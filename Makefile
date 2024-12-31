@@ -113,8 +113,8 @@ format-man-pages: $(MANFORMATED)
 # tar files for Debian package
 
 tars: deb-clean
-	cd .. && tar -cJvf midiminder_1.0.orig.tar.xz --exclude=debian midiminder_1.0
-	tar -cJvf ../midiminder_1.0-1.debian.tar.xz debian/
+	cd .. && tar -cJvf midiminder_1.0.1.orig.tar.xz --exclude=debian midiminder_1.0.1
+	tar -cJvf ../midiminder_1.0.1-1.debian.tar.xz debian/
 
 # dependencies
 

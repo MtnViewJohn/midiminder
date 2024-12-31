@@ -4,6 +4,14 @@ This file summarizes the changes made with each release of the code.
 
 -----------
 
+# 1.0.1 - 2024-12-31
+
+* Case insensitive matching for partial matches finally implemented
+* Fixes:
+  * Support for builds on Debian 10
+  * Fixes for builds with fmt 11
+  
+
 # 1.0 - 2024-12-15
 
 * New names:

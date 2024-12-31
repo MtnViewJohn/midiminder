@@ -1,5 +1,5 @@
-midiminder (1.0-1) unstable; urgency=medium
+midiminder (1.0.1-1) unstable; urgency=medium
 
   * Initial release. (Closes: #1086796)
 
- -- John Horigan <john@glyphic.com>  Sun, 15 Dec 2024 09:34:25 -0800
+ -- John Horigan <john@glyphic.com>  Tue, 31 Dec 2024 10:58:10 -0800

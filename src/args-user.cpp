@@ -5,7 +5,7 @@
 
 namespace {
   const auto appDescription = "MIDI connection utility knife";
-  const auto appVersion = "1.0";
+  const auto appVersion = "1.0.1";
 }
 
 namespace Args {
