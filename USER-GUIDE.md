@@ -158,8 +158,8 @@ and you are running the software **Pure Data**:
 Edit a file, say **live-pd-performance.rules**, to have:
 
   ```
-  Pure Data <-- Launchpad
-  Pure Data --> Monsta
+  pure data <-- launchpad
+  pure data --> monsta
   ```
 
 If you load this profile into `midiminder`, then it will automatically
@@ -184,7 +184,8 @@ connect your devices this way when they are present:
 
 Notice that the rules are simple:
 
-- You can use any sensible portion of the device name you like.
+- You can use any sensible portion of the device name you like
+  (case-insensitive)
 - The rules can go in either direction, left to right or right to left.
 - If you don't specify a port, the first sensible port on
   a device will be used.
@@ -194,7 +195,7 @@ Notice that the rules are simple:
 If you want to also hook up the DIN port of the Launchpad, you could type
 
   ```console
-  $ midiwala connect Launchpad:DIN Pure
+  $ midiwala connect launchpad:DIN pure
   Connected Launchpad Pro MK3:LPProMK3 DIN [32:1] --> Pure Data:Midi-In 1 [130:0]
   ```
 
@@ -202,19 +203,19 @@ Notice:
 
   - On the command line, the connection is always left to right
   - Any sensible part of the port name is fine
-  - Because it's a command line, we only typed `Pure`, if we wanted to use
+  - Because it's a command line, we only typed `pure`, if we wanted to use
     the full name we'd have to have quoted it: `"Pure Data"`.
   - It'll only be able to connect if the devices are present
   - You could have used the interactive mode of `midiwala` and connected it
-    that way with even less typing.
+    with even less typing.
 
 You can look at the server's rules now:
 
   ```console
   $ midiminder save -
   # Profile rules:
-  Pure Data <-- Launchpad
-  Pure Data --> Monsta
+  pure data <-- launchpad
+  pure data --> monsta
 
   # Observed rules:
   "Launchpad Pro MK3":"LPProMK3 DIN" --> "Pure Data":"Midi-In 1"
@@ -231,9 +232,9 @@ to make connections.
 We could add this rule to our file:
 
   ```
-  Pure Data <-- Launchpad
-  Pure Data <-- Launchpad:DIN
-  Pure Data --> Monsta
+  pure data <-- launchpad
+  pure data <-- launchpad:DIN
+  pure data --> monsta
   ```
 
 And load the file again:
@@ -249,9 +250,9 @@ And load the file again:
 
   $ midiminder save -
   # Profile rules:
-  Pure Data <-- Launchpad
-  Pure Data <-- Launchpad:DIN
-  Pure Data --> Monsta
+  pure data <-- launchpad
+  pure data <-- launchpad:DIN
+  pure data --> monsta
   ```
 ### Sample profiles
 

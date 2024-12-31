@@ -118,7 +118,7 @@ l l l x
 l lI lB x.
                         | Syntax                  | Example
 
-(a) by partial name     | client-name             | Monsta
+(a) by partial name     | client-name             | monsta
 (b) by full exact name  | \fB"\fIclient-name\fB"  | "Launchpad Pro"
                         | \fB'\fIclient-name\fI'  | 'Launchpad Pro'
 (c) by wildcard         | \fB*                    | *
@@ -127,7 +127,8 @@ l lI lB x.
 (a)
 A client can be specified by any part of its name. Spaces are allowed. Since
 client names can be long, any substring can be given. For example,
-\fBMonsta\fR will match a client named \fBMicroMonsta\ 2\fR.
+\fBmonsta\fR will match a client named \fBMicroMonsta\ 2\fR. These matches
+are case-insensitive.
 .IP
 Be aware that some client specifications will match multiple devices, should
 your system have them. For example, \fBLaunchpad\fR will match both a
@@ -137,7 +138,7 @@ exactly what you want.
 (b)
 A client can be specified by its full name, by putting the specification in
 double quotes. So \fB"Launchpad\ Pro"\fR will only match a \fBLaunchpad\ Pro\fR,
-but not a \fBLaunchpad\ Pro\ MK3\fR.
+but not a \fBLaunchpad\ Pro\ MK3\fR. These matches are case-sensitive.
 .TP
 (c)
 This specification matches all clients.
@@ -151,7 +152,7 @@ l l l x
 l lI lB x.
                   | Syntax                      | Example
 
-(a) by default    | client                      | Digitakt
+(a) by default    | client                      | digitakt
 (b) by name       | client\fB:\fIport-name      | Launch Pad:DAW
 (c) by exact name | client\fB:"\fIport-name\fB" | Launch Pad:"Live Port"
                   | client\fB:'\fIport-name\fI' | Launch Pad:'Live Port'
