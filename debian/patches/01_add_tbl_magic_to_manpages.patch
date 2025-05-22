@@ -1,0 +1,48 @@
+Description: Add nroff filter line to man pages that require tbl preprocessor
+ This line is optional because tbl is in the default filter set for man. But
+ for some reason, lintian suppresses the default set in its check. This results
+ in a warning if the man page requires tbl preprocessing.
+Author: John Horigan <john@glyphic.com>
+Applied-Upstream: https://github.com/mzero/midiminder/commit/9c4485614fcdd41ca9bd8c232decb0c6bddcfba5
+Last-Update: 2025-01-04
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/man/midiminder-profile.5
++++ b/man/midiminder-profile.5
+@@ -1,3 +1,4 @@
++'\" t
+ .TH AMIDIMINDER-PROFILE 5
+ 
+ .SH NAME
+--- a/man/midiwala.1
++++ b/man/midiwala.1
+@@ -1,3 +1,4 @@
++'\" t
+ .TH AMIDIMINDER 1
+ .SH NAME
+ midiwala \- MIDI connection tool
+--- a/man/midiminder-daemon.8
++++ b/man/midiminder-daemon.8
+@@ -1,3 +1,4 @@
++'\" t
+ .TH AMIDIMINDER-DAEMON 8
+ 
+ .SH NAME
+--- a/man/midiminder.1
++++ b/man/midiminder.1
+@@ -1,3 +1,4 @@
++'\" t
+ .TH AMIDIMINDER 1
+ .SH NAME
+ midiminder \- Utility to manage MIDI device connections
+--- a/Makefile
++++ b/Makefile
+@@ -10,7 +10,7 @@
+ 
+ BUILD_DIR ?= ./build
+ 
+-all: bin format-man-pages
++all: bin
+ bin: $(BUILD_DIR)/$(TARGET_SERVER) $(BUILD_DIR)/$(TARGET_USER)
+ 
+ deb:

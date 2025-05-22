@@ -6,7 +6,7 @@ Prerequisites:
   * libasound2-dev
   * libfmt-dev
   * libicu-dev
-  * debhelper-compat=13 *(if building the .deb)*
+  * debhelper *(if building the .deb)*
 
   ```sh
   sudo apt install g++ make libasound2-dev libfmt-dev libicu-dev

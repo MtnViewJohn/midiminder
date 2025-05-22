@@ -3,8 +3,10 @@ Section: sound
 Priority: optional
 Maintainer: John Horigan <john@glyphic.com>
 Build-Depends: debhelper-compat (= 13), libasound2-dev, libfmt-dev, libicu-dev
-Standards-Version: 4.7.0
+Standards-Version: 4.7.2
 Homepage: https://github.com/mzero/midiminder
+Vcs-Git: https://github.com/mzero/midiminder.git
+Vcs-Browser: https://github.com/mzero/midiminder
 Rules-Requires-Root: no
 
 Package: midiminder
@@ -18,7 +20,7 @@ Description: MIDI connection minder & viewer
  return to the system.
  .
  A configuration of connections can also be stored in a file, and loaded
- at any time, causing the ports to be reconnected according to easy to write
+ at any time, causing the ports to be reconnected according to easy-to-write
  rules.
  .
  Includes the utility command, midiwala, which provides a clear view of the
