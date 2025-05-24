@@ -2,8 +2,6 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: midiminder
 Upstream-Contact: Mark Lentczner <mark@glyphic.com>
 Source: https://github.com/mzero/midiminder
-#
-# Please double check copyright with the licensecheck(1) command.
 
 Files:     *
 Copyright: 2020-2025 Mark Lentczner <mark@glyphic.com>
